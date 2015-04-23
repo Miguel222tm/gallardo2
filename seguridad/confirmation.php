@@ -27,8 +27,13 @@
 		if($status==0){
 		$confirm->postUser($username, $hashedPassword, $type);
 		$confirm->putValidacion($code,1);
+		 echo "<script type='text/javascript'> alert('Cuenta activada con éxito'); document.location=('login.html'); </script>";	
+
+
+
 		}else{
 			echo "Este correo ya ha sido activado anteriormente";
+			 echo "<script type='text/javascript'>  document.location=('../login.html'); </script>";	
 		}	
 
 

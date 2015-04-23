@@ -3,11 +3,11 @@ $(document).ready(function(){
 	    
 
     $("#chat").ready(function(){
-    	setInterval(chatsillo, 1500);
+    	setInterval(chatsillo, 1000);
     	setInterval(cerrarTodo, 1200000);
 	});
 	 $("#usuarios").ready(function(){
-    	setInterval(members, 1500);
+    	setInterval(members, 1000);
 	});
 
 	function chatsillo(){

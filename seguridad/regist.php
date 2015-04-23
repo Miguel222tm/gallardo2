@@ -34,20 +34,20 @@ $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
 $mail->Host = "smtp.gmail.com";
 $mail->Port = 465; // or 587
 $mail->IsHTML(true);
-$mail->Username = "vector.noreply@gmail.com"; // SMTP username
-$mail->Password = "vector2015"; // SMTP password 
-$mail->FromName = 'Vector'; 
-$mail->From     = "vector.noreply@gmail.com";  //sender
+$mail->Username = "whitedb.noreply@gmail.com"; // SMTP username
+$mail->Password = "whitedb2015"; // SMTP password 
+$mail->FromName = 'WhiteDb'; 
+$mail->From     = "whitedb.noreply@gmail.com";  //sender
 $mail->AddAddress($_POST['email']);  //receiver
 
 							$mail->Subject  = "Registro sitio white DB";
-							$mail->Body     = " Hola estimado cliente, para completar tu registro tienes que dar click a la siguiente liga -> http://localhost/gallardo/confirmation.php?code=".$code; 
+							$mail->Body     = " Hola estimado cliente, para completar tu registro tienes que dar click a la siguiente liga -> http://aplicaciones.tam.itesm.mx:8080/whitedb/seguridad/confirmation.php?code=".$code; 
 
 							 if(!$mail->Send()) {
            						 echo 'Se encontró un error, por favor hacer de nuevo su registro.';
             				//echo 'Mailer error: ' . $mail->ErrorInfo;
            					 } else {
-            					echo 'Se ha enviado un correo a su mail para confirmar su cuenta.';
+            				 echo "<script type='text/javascript'> alert('Se le ha enviado un correo para confirmar su acceso a White DB'); document.location=('../login.html'); </script>";	
             					 $registrar= $registro->validacion($code, $_POST['email'], $_POST['hashedPassword'], $type);
             					 $client= $registro->postCliente($_POST['email'], $_POST['Name'], $_POST['lastName'], $_POST['rfc'], $_POST['address']);
             					}

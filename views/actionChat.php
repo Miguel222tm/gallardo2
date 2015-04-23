@@ -1,6 +1,6 @@
 
 <?php
-
+    session_start();
 	require("../includes/header.php");
      require "../calls/callChat.php";
 
@@ -77,7 +77,7 @@
                             </div>
 
                             
-                            <input type="text" name="idChat" value="<?php echo $_SESSION['chatRoom']; ?>">
+                            <input type="text" name="idChat" value="<?php echo $_SESSION['chatRoom']; ?>" readonly>
                             <button type="submit" class="btn btn-default" name="btnEnviar">Enviar</button>
                             <button type="reset" class="btn btn-default">Reset</button>
 
