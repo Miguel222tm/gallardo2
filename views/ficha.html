@@ -1,0 +1,192 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0078)http://csa.itesm.mx:8080/FichaDePagoCol/Ficha_Col_View.jsp?MATRICULA=A00512345 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  
+  <title>Ficha Pago Colegiatura</title>
+  <style type="text/css">
+.class1 a:link {color:#0C1C8D; text-decoration:underline;}
+.class1 a:visited {color:#0C1C8D; text-decoration:underline;}
+.class1 a:active {color:#0C1C8D; text-decoration:underline;}
+.class1 a:hover {color:#0C1C8D; text-decoration:underline;}
+</style>
+  
+  
+  
+<script language="JavaScript">
+	function sendform() {
+		var montoPagar = document.getElementById('montoPago').value;
+		//alert(montoPagar);
+		if(dosDecimales(montoPagar)){
+			document.getElementById('montoinicial').value = montoPagar;
+			document.form1.submit();	
+		}
+	}
+	
+	function dosDecimales(prueba){
+		var patt1=new RegExp(/^\d+(\.\d{0,2})?$/);
+		if(prueba!="") {
+			if(patt1.test(prueba)){
+				return true;
+			}else{
+				var message = "Por favor inserte un número válido.";
+				setError(message);
+				return false;
+			}	
+		} else {
+			var message = "Favor de indicar el monto a pagar.";
+			setError(message);
+			return false;
+		}
+	}
+	
+	function setError(message) {
+		alert(message);
+		document.getElementById("montoPago").select();
+		document.getElementById("montoPago").focus();
+		return false;
+	}
+	
+</script>
+</head>
+<body>
+
+
+
+
+    
+    
+<div style="text-align: center;">
+  <img style="width: 577px; height: 60px;" alt="tecno" src="./Ficha Pago Colegiatura_files/uno.bmp"><table style="width: 719px; height: 60px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td style="text-align: center;"><br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+   <table style="width: 580px; height: 30px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td style="text-align: center; color: #000000; font-family: Arial; height: 10px; width: 50px; background-color: #FFFFFF;">
+          <p style="background-color: #FFFFFF);" class="MsoNormal"><span style="font-size: 9pt; font-family: Arial;">Matrícula<o:p></o:p></span></p>
+        </td>
+        <td style="text-align: center; color: #000000; font-family: Arial; height: 10px; background-color: #FFFFFF; width: 240px;"><span style="font-size: 9pt; font-family: Arial;">Nombre</span></td>
+        <td style="text-align: center; #000000; font-family: Arial; height: 10px; width: 150px; background-color: #FFFFFF;"><span style="font-size: 9pt; font-family: Arial;">Monto a pagar</span></td>
+        
+      </tr>
+      <tr>
+        <td style="font-family: Arial; height: 10px; width: 50px;font-size: 10pt; border:thin solid #000000;">&nbsp;&nbsp;&nbsp;00512345</td>
+       <td style="font-family: Arial; height: 10px; width: 240px;font-size: 10pt; border-top: thin solid #000000; border-bottom: thin solid #000000;">&nbsp;&nbsp;&nbsp;Daniel Gallardo</td>
+        <td style="text-align: right; font-family: Arial; height: 10px;width: 150px; font-size: 10pt; border:thin solid #000000;">$&nbsp;<input type="text" id="montoPago" size="10" value="" style="border: none">M.N. </td>
+        
+      </tr>
+    </tbody>
+  </table>
+ <br><br>
+ <table style="width: 580px; height: 30px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000">
+    <tbody>
+      <tr>
+        <td style="text-align: center; color: #000000; font-family: Arial; height: 10px; width: 180px; background-color: #FFFFFF; border-bottom:solid">
+          <p style="background-color: #CCCCCC);" class="MsoNormal"><span style="font-size: 9pt; font-family: Arial;">Banco<o:p></o:p></span></p>
+        </td>
+        <td style="text-align: center; color: #000000;  font-family: Arial; height: 10px; background-color: #FFFFFF; width: 220px; border-bottom:solid"><span style="font-size: 9pt; font-family: Arial;">Cuenta</span></td>
+        <td style="text-align: center; color:  #000000; font-family: Arial; height: 10px; width: 150px; background-color: #FFFFFF; border-bottom:solid"><span style="font-size: 9pt; font-family: Arial;">Referencia</span></td>
+        
+      </tr>
+	  <tr><td style="border:none">&nbsp;</td></tr>
+      <tr>
+        <td style="border:none;  border-bottom:thin solid #000000"><img style="width: 119px; height: 28px;" alt="bancomer" src="./Ficha Pago Colegiatura_files/dos.bmp"></td>
+        <td style="border:none;  border-bottom:thin solid #000000"><span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">
+                     CONVENIO CIE:  688509 
+                    </span></td>
+        <td style="border:none;  border-bottom:thin solid #000000"> <span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">Referencia:
+                   005123459
+                  </span></td>
+        
+      </tr>
+	  <tr><td style="border:none">&nbsp;</td></tr>
+	  <tr>
+        <td style="border:none;  border-bottom:thin solid #000000"><img style="width: 119px; height: 28px;" alt="banorte" src="./Ficha Pago Colegiatura_files/cinco.bmp"></td>
+        <td style="border:none;  border-bottom:thin solid #000000"><span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">
+                     EMISORA: 27731 
+                    </span></td>
+        <td style="border:none;  border-bottom:thin solid #000000"> <span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">Referencia:
+                   005123459
+                  </span></td>
+        
+      </tr>
+	  <tr><td style="border:none">&nbsp;</td></tr>
+      <tr>
+        <td style="border:none;  border-bottom:thin solid #000000"><img style="width: 119px; height: 28px;" alt="hsbc" src="./Ficha Pago Colegiatura_files/cuatro.bmp"></td>
+        <td style="border:none;  border-bottom:thin solid #000000"><span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">
+                     TRANSACCIÓN: 5503 CLAVE: 7608   
+                    </span></td>
+        <td style="border:none;  border-bottom:thin solid #000000"> <span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">Referencia:
+                   005123459
+                  </span></td>
+        
+      </tr>
+	  <tr><td style="border:none">&nbsp;</td></tr>
+	  <tr>
+        <td style="border:none;  border-bottom:thin solid #000000"><img style="width: 119px; height: 28px;" alt="santander" src="./Ficha Pago Colegiatura_files/seis.bmp"></td>
+        <td style="border:none;  border-bottom:thin solid #000000"><span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">
+                     CONVENIO: 1056
+                    </span></td>
+        <td style="border:none;  border-bottom:thin solid #000000"> <span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">Referencia:
+                   005123459
+                  </span></td>
+        
+      </tr>
+	  <tr><td style="border:none">&nbsp;</td></tr>
+      <tr>
+        <td style="border:none;  border-bottom:thin solid #000000"><img style="width: 119px; height: 28px;" alt="banamex" src="./Ficha Pago Colegiatura_files/tres.bmp"></td>
+        <td style="border:none;  border-bottom:thin solid #000000"><span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">
+                     CUENTA: 558-7459363
+                    </span></td>
+        <td style="border:none;  border-bottom:thin solid #000000"> <span style="font-size: 10pt; font-family: Arial; color: rgb(0, 0, 0);">Referencia:
+                   005123459
+                  </span></td>
+        
+      </tr>
+	   <tr><td style="border:none; width: 206px"><form method="POST" name="form1" action="http://csa.itesm.mx:7003/TiendaVirtualTDC/tipo_de_pago.jsf">  
+					<input type="hidden" name="matricula" value="A00512345">
+					<input type="hidden" name="referencia" value="A00512345">
+					<input type="hidden" name="servicio" value="Colegiatura">
+					<input type="hidden" name="concepto" value="">
+					<input type="hidden" name="campus" value="H">
+					<input type="hidden" name="campusAdministrativo" value="10">
+					<input type="hidden" id="montoinicial" name="montoinicial" value="">
+					<input type="hidden" id="nombre" name="nombre" value="Daniel Gallardo">
+					<input type="hidden" name="tipo" value="CO">
+				</form></td></tr>
+    </tbody>
+  </table>
+  <table style="width: 570px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td style="width: 530px;">
+          <p style="width: 536px;" class="MsoNormal"><span style="font-size: 6pt; font-family: Arial; color: rgb(0, 0, 0);">
+*Si usted requiere factura, tiene un plazo máximo de 5
+días hábiles posteriores
+a su pago para solicitarla.</span></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>   
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td align="right" width="85%" style="font-family:Arial, Helvetica, sans-serif; font-size:12px"><form><span class="class1"><a href="http://csa.itesm.mx:8080/FichaDePagoCol/Ficha_Col_View.jsp?MATRICULA=A00512345#" onclick="sendform();">Pago en Línea</a></span></form> 
+ </td> 
+<td align="right" width="8%" style="font-family:Arial, Helvetica, sans-serif; font-size:12px"><form><span class="class1"><a href="http://csa.itesm.mx:8080/FichaDePagoCol/Ficha_Col_View.jsp?MATRICULA=A00512345#" onclick="window.print();return false">Imprimir</a></span></form> </td>
+<td width="1%">&nbsp;</td>
+<td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:12px"><form><span class="class1"><a href="http://csa.itesm.mx:8080/FichaDePagoCol/Ficha_Col_View.jsp?MATRICULA=A00512345#" onclick="window.close();return false">Salir</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+</tbody></table>
+
+
+</body></html>
