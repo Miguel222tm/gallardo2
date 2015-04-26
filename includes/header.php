@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> White DB</title>
+    <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -101,6 +101,17 @@
                             </li>
                             <li>
                                 <a href="FAQ.php">Ver/Editar/Borrar</a>
+                            </li>
+                        </ul>
+                    </li>
+                      <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#admins"><i class="fa fa-fw fa-wrench"></i> Administradores <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="admins" class="collapse">
+                            <li>
+                                <a href="agregarAdmins.php">Agregar</a>
+                            </li>
+                            <li>
+                                <a href="verAdmins.php">Ver/Editar/Borrar</a>
                             </li>
                         </ul>
                     </li>
