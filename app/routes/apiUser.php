@@ -35,7 +35,7 @@ $app->get("/user/:id", function($id) use($app)
 		$dbh = $connection->prepare("SELECT username, hashedPassword, type FROM users WHERE username=?");
 		$dbh->bindParam(1, $id);
 		$dbh->execute();
-		$resultado = $dbh->fetchAll(PDO::FETCH_ASSOC);
+		$resultado = $dbh->fetch(PDO::FETCH_ASSOC);
 		$connection = null;
 
 		$app->response->headers->set("Content-type", "application/json");
@@ -79,8 +79,52 @@ $app->post("/users/", function() use($app){
 	}
 });
 
+/*****  insert usuario*/
+$app->put("/users/", function() use($app){
+	$username= $app->request->put("username");
+	$pass= $app->request->post("hashedPassword");
+	
+
+	try{
+		$connection = getConnection();
+		$dbh = $connection->prepare("UPDATE users SET hashedPassword=? WHERE username=?");
+		$dbh->bindParam(1, $pass);
+		$dbh->bindParam(2, $username);
+	
+		$dbh->execute();
+		$connection = null;
+
+		$app->response->headers->set("Content-type", "application/json");
+		$app->response->status(200);
+		$app->response->body(json_encode(array("status" =>"user added succesfully", "user"=> $username)));
+	}
+	catch(PDOException $e)
+	{
+		echo "Error: " . $e->getMessage();
+	}
+});
 
 
+
+$app->delete("/users/:id", function($id) use($app){
+
+	try{
+		$connection = getConnection();
+		$dbh = $connection->prepare("DELETE FROM users WHERE username = ?");
+		$dbh->bindParam(1, $id);
+		$dbh->execute();
+		$connection = null;
+		$app->response->headers->set("Content-type", "application/json");
+		$app->response->status(200);
+		$app->response->body(json_encode(array("status" => "ok", 'mensaje'=> 'se ha borrado con éxito el pedido con el id: '. $id)));
+	}
+	catch(PDOException $e)
+	{
+		echo "Error: " . $e->getMessage();
+	}
+
+
+});
 
 
 

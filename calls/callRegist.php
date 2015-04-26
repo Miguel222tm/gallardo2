@@ -21,7 +21,7 @@ public function validacion($code, $email, $hashedPassword, $type){
         else
         {
             
-          var_dump($response);
+          return ($response);
         }
     }
 
@@ -72,15 +72,38 @@ public function validacion($code, $email, $hashedPassword, $type){
 
  public function postUser($username, $hashedPassword, $type){
 /*
-		$username= $app->request->post("username");
-	$pass= $app->request->post("hashedPassword");
-	
-	$type= $app->request->post("type");
+        $username= $app->request->post("username");
+    $pass= $app->request->post("hashedPassword");
+    
+    $type= $app->request->post("type");
 
-	*/
+    */
 
          $data = array("username" => $username,"hashedPassword" => $hashedPassword,"type" => $type);
         $ch = curl_init($GLOBALS['crudlink']."users/");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($data));
+        $response = curl_exec($ch);
+        curl_close($ch);
+        if(!$response) 
+        {
+            return false;
+        }
+        else
+        {
+            
+          var_dump($response);
+        }
+    }
+     public function postAdmin($username, $Name, $lastName){
+/*
+        
+
+    */
+
+         $data = array("username" => $username,"Name" => $Name,"lastName" => $lastName);
+        $ch = curl_init($GLOBALS['crudlink']."admin/");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($data));
@@ -118,6 +141,8 @@ public function validacion($code, $email, $hashedPassword, $type){
             var_dump($response);
         }
     }
+
+
 
 
 

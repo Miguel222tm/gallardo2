@@ -1,5 +1,23 @@
 <?php
+$app->get("/admin/", function() use($app)
+{
+	try{
+		$connection = getConnection();
+		$dbh = $connection->prepare("SELECT username, Name, lastName FROM Administrator ");
+		
+		$dbh->execute();
+		$resultado = $dbh->fetchAll(PDO::FETCH_ASSOC);
+		$connection = null;
 
+		$app->response->headers->set("Content-type", "application/json");
+		$app->response->status(200);
+		$app->response->body(json_encode($resultado));
+	}
+	catch(PDOException $e)
+	{
+		echo "Error: " . $e->getMessage();
+	}
+});
 // trae al queue con su code para verificar
 $app->get("/admin/:id", function($id) use($app)
 {
@@ -74,6 +92,26 @@ $app->put("/admin/", function() use($app)
 	}
 });
 
+
+$app->delete("/admin/:id", function($id) use($app){
+
+	try{
+		$connection = getConnection();
+		$dbh = $connection->prepare("DELETE FROM Administrator WHERE username = ?");
+		$dbh->bindParam(1, $id);
+		$dbh->execute();
+		$connection = null;
+		$app->response->headers->set("Content-type", "application/json");
+		$app->response->status(200);
+		$app->response->body(json_encode(array("status" => "ok", 'mensaje'=> 'se ha borrado con éxito el administrador con el id: '. $id)));
+	}
+	catch(PDOException $e)
+	{
+		echo "Error: " . $e->getMessage();
+	}
+
+
+});
 
 
 

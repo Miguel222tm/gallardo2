@@ -5,7 +5,7 @@ $app->get("/client/:id", function($id) use($app)
 {
 	try{
 		$connection = getConnection();
-		$dbh = $connection->prepare("SELECT Name, lastName, rfc, address FROM client WHERE username=?");
+		$dbh = $connection->prepare("SELECT username, Name, lastName, rfc, address FROM client WHERE username=?");
 		$dbh->bindParam(1, $id);
 		$dbh->execute();
 		$resultado = $dbh->fetch(PDO::FETCH_ASSOC);

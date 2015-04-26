@@ -110,7 +110,7 @@ class callVenta{
            
             var_dump($response);
         }
-    }// termina delete encuesta
+    }// termina delete product
 
 
 
